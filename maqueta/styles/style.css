@@ -592,10 +592,81 @@ body {
         gap: 20px;
         align-items: flex-start;
     }
-
+ 
     .admin-table {
         display: block;
         overflow-x: auto;
     }
 }  
+}
+        /* Estilo boton registro*/ 
+        .btn-registro {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #3498db; /* El azul exacto del login */
+    color: white !important;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.btn-registro:hover {
+    background-color: #2980b9; /* El color cuando pasas el mouse */
+    transform: translateY(-3px); /* El  que sube un poquito */
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Esto centra la caja en la pantalla */
+.registro-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* Le da altura  */
+    background-color: #f4f7f6; /* Un gris muy clarito de fondo */
+    padding: 20px;
+}
+
+/* Esta es la tarjeta blanca */
+.registro-caja {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Esto separa cada renglón */
+.campo {
+    margin-bottom: 15px;
+    text-align: left; /* Para que los nombres queden sobre los cuadros */
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.campo input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Esto hace que el cuerpo de la página ocupe toda la pantalla */
+    margin: 0;
+}
+
+.registro-contenedor {
+    flex: 1; /* Esta línea es la "magia": estira tu registro para empujar el footer abajo */
 }
