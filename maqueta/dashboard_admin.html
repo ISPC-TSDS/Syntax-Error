@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Admin</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="home.html">Syntax<span>Hub</span></a>
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li class="dropdown-admin">
+                    <a href="#">Mi Perfil</a>
+                    <ul class="dropdown-menu-admin">
+                        <li><a href="">Mis Datos</a></li>
+                        <li><a href="">Cambiar Contraseña</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="home.html" class="btn-login">
+                        Cerrar Sesión
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container-admin">
+        <h1 class="title">Panel de Administración</h1>
+        <div class="cards-container-admin">
+            <a href="#tabla-salas" class="card_admin card-admin-salas">
+                <h2>Administrar Salas</h2>
+                <p>Crear, editar o eliminar salas disponibles.</p>
+            </a>
+            <div class="card_admin">
+                <h2>Gestionar Reservas</h2>
+                <p>Ver y administrar las reservas realizadas.</p>
+            </div>
+            <div class="card_admin">
+                <h2>Gestionar Usuarios</h2>
+                <p>Administrar cuentas y permisos de usuarios.</p>
+            </div>
+            <div class="card_admin">
+                <h2>Ver Reportes</h2>
+                <p>Consultar estadísticas e información del sistema.</p>
+            </div>
+        </div>
+
+        <section id="tabla-salas" class="admin-table-section">
+            <div class="admin-table-header">
+                <h2>Administrar Salas</h2>
+                <button class="btn-create-room">
+                    Crear Sala
+                </button>
+            </div>
+
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Capacidad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>The Collaboration Hub</td>
+                        <td>12 Personas</td>
+                        <td>
+                            <button class="btn-edit">Editar</button>
+                            <button class="btn-delete">Eliminar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>The Focus Zone</td>
+                        <td>6 Personas</td>
+                        <td>
+                            <button class="btn-edit">Editar</button>
+                            <button class="btn-delete">Eliminar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>The Code Corner</td>
+                        <td>8 Personas</td>
+                        <td>
+                            <button class="btn-edit">Editar</button>
+                            <button class="btn-delete">Eliminar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>The Idea Incubator</td>
+                        <td>15 Personas</td>
+                        <td>
+                            <button class="btn-edit">Editar</button>
+                            <button class="btn-delete">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>
