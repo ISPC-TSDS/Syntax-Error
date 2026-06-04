@@ -25,44 +25,24 @@
     <section class="login-container">
         <h2>Iniciar Sesión</h2>
 
-        <form action="/login" method="POST">
+        <form id="loginForm">
             <div class="form-group">
                 <label for="username">Correo electrónico o usuario:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username">
             </div>
             <div class="form-group">
                 <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password">
             </div>
             <div id="error-message" class="error-text"></div>
             <a href="dashboard_user.html"><button type="button">Iniciar Sesión</button></a>
         </form>
 
         <div class="login-footer">
-            <p><a href="/recuperar-clave">Olvidé mi clave</a></p>
+            <p><a href="#">Olvidé mi clave</a></p>
             <p>¿No tienes cuenta? <a href="register.html">Registrarse</a></p>
         </div>
     </section>
-
-    <script>
-        document.querySelector('form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const usuario = document.getElementById('username').value;
-            const clave = document.getElementById('password').value;
-
-            if (usuario === 'admin' && clave === '123') {
-                window.location.href = 'dashboard_admin.html';
-            }
-            else if (usuario === 'user' && clave === '123') {
-                window.location.href = 'dashboard_user.html';
-            }
-            else {
-                const errorDiv = document.getElementById('error-message');
-                errorDiv.textContent = 'Usuario o contraseña incorrectos. Intenta con admin/123 o user/123';
-                errorDiv.style.display = 'block';
-            }
-        });
-    </script>
     <footer>
         <p>&copy; 2026 Syntax Hub - Córdoba, Argentina. Hecho por Syntax Error.</p>
     </footer>
