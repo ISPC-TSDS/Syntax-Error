@@ -16,6 +16,9 @@
 
         <nav class="nav-links">
             <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Nosotros</a></li>
+
                 <li class="dropdown-admin">
                     <a href="#">Mi Perfil</a>
                     <ul class="dropdown-menu-admin">
@@ -23,6 +26,7 @@
                         <li><a href="#">Cambiar Contraseña</a></li>
                     </ul>
                 </li>
+
                 <li>
                     <a href="index.html" class="btn-login">Cerrar Sesión</a>
                 </li>
@@ -34,37 +38,91 @@
     <div class="dashboard-container-admin">
         <h1 class="title">Panel del Usuario</h1>
 
-        <!-- Tarjetas principales -->
+        <!-- Casos de uso -->
         <div class="cards-container-admin">
-            <a href="#reservar-sala" class="card_admin">
-                <h2>Reservar Sala</h2>
-                <p>Seleccioná una sala, fecha y horario para realizar una reserva.</p>
+
+            <a href="#espacios-disponibles" class="card_admin">
+                <h2>Ver Espacios Disponibles</h2>
+                <p>Consultar las salas disponibles para reservar.</p>
             </a>
 
-            <a href="#mis-reservas" class="card_admin">
-                <h2>Ver Mis Reservas</h2>
-                <p>Consultá todas tus reservas activas y pasadas.</p>
+            <a href="#reservar-espacio" class="card_admin">
+                <h2>Reservar Espacio</h2>
+                <p>Seleccionar una sala, fecha y horario para realizar una reserva.</p>
             </a>
 
-            <a href="#confirmacion" class="card_admin">
-                <h2>Confirmar Reserva</h2>
-                <p>Visualizá la confirmación de tu última reserva.</p>
+            <a href="#reservas-confirmadas" class="card_admin">
+                <h2>Ver Reservas Confirmadas</h2>
+                <p>Consultar las reservas confirmadas.</p>
             </a>
 
-            <a href="#cancelar-reserva" class="card_admin">
-                <h2>Cancelar Reserva</h2>
-                <p>Cancelá una reserva existente.</p>
+            <a href="#historial-reservas" class="card_admin">
+                <h2>Ver Historial de Reservas</h2>
+                <p>Visualizar reservas realizadas anteriormente.</p>
             </a>
+
         </div>
 
-        <!-- Seleccionar sala, fecha y hora -->
-        <section id="reservar-sala" class="admin-table-section">
+        <!-- Ver espacios disponibles -->
+        <section id="espacios-disponibles" class="admin-table-section">
+
             <div class="admin-table-header">
-                <h2>Nueva Reserva</h2>
+                <h2>Espacios Disponibles</h2>
+            </div>
+
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Sala</th>
+                        <th>Capacidad</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>The Collaboration Hub</td>
+                        <td>12 Personas</td>
+                        <td>Disponible</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>The Focus Zone</td>
+                        <td>6 Personas</td>
+                        <td>Disponible</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>The Code Corner</td>
+                        <td>8 Personas</td>
+                        <td>Ocupada</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>The Idea Incubator</td>
+                        <td>15 Personas</td>
+                        <td>Disponible</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+        <!-- Reservar espacio -->
+        <section id="reservar-espacio" class="admin-table-section">
+
+            <div class="admin-table-header">
+                <h2>Reservar Espacio</h2>
                 <button class="btn-create-room">Confirmar Reserva</button>
             </div>
 
-            <form class="login-container" style="max-width: 100%; margin: 0; box-shadow: none; padding: 0;">
+            <form class="login-container reserva-form">
+
                 <div class="form-group">
                     <label for="sala">Seleccionar Sala</label>
                     <select id="sala" class="form-control">
@@ -84,25 +142,52 @@
                     <label for="hora">Hora</label>
                     <input type="time" id="hora">
                 </div>
+
             </form>
+
         </section>
 
-        <!-- Confirmación -->
-        <section id="confirmacion" class="admin-table-section">
+        <!-- Reservas confirmadas -->
+        <section id="reservas-confirmadas" class="admin-table-section">
+
             <div class="admin-table-header">
-                <h2>Reserva Confirmada</h2>
+                <h2>Reservas Confirmadas</h2>
             </div>
 
-            <p><strong>Sala:</strong> The Focus Zone</p>
-            <p><strong>Fecha:</strong> 20/05/2026</p>
-            <p><strong>Hora:</strong> 15:00 hs</p>
-            <p><strong>Estado:</strong> Confirmada</p>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Sala</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>The Focus Zone</td>
+                        <td>20/05/2026</td>
+                        <td>15:00 hs</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>The Collaboration Hub</td>
+                        <td>23/05/2026</td>
+                        <td>09:00 hs</td>
+                    </tr>
+                </tbody>
+            </table>
+
         </section>
 
-        <!-- Mis reservas -->
-        <section id="mis-reservas" class="admin-table-section">
+        <!-- Historial de reservas -->
+        <section id="historial-reservas" class="admin-table-section">
+
             <div class="admin-table-header">
-                <h2>Mis Reservas</h2>
+                <h2>Historial de Reservas</h2>
             </div>
 
             <table class="admin-table">
@@ -128,54 +213,23 @@
                     <tr>
                         <td>2</td>
                         <td>The Code Corner</td>
-                        <td>25/05/2026</td>
+                        <td>15/05/2026</td>
                         <td>10:00 hs</td>
-                        <td>Pendiente</td>
+                        <td>Finalizada</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>The Collaboration Hub</td>
+                        <td>10/05/2026</td>
+                        <td>18:00 hs</td>
+                        <td>Finalizada</td>
                     </tr>
                 </tbody>
             </table>
+
         </section>
 
-        <!-- Cancelar reserva -->
-        <section id="cancelar-reserva" class="admin-table-section">
-            <div class="admin-table-header">
-                <h2>Cancelar Reserva</h2>
-            </div>
-
-            <table class="admin-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Sala</th>
-                        <th>Fecha</th>
-                        <th>Hora</th>
-                        <th>Acción</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>The Focus Zone</td>
-                        <td>20/05/2026</td>
-                        <td>15:00 hs</td>
-                        <td>
-                            <button class="btn-delete">Cancelar</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>The Code Corner</td>
-                        <td>25/05/2026</td>
-                        <td>10:00 hs</td>
-                        <td>
-                            <button class="btn-delete">Cancelar</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
     </div>
 
 </body>
