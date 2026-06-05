@@ -25,39 +25,23 @@
     z-index: 1000;
 }
 
-/* Estilo del Nombre*/
-.logo a {
+.navbar-brand {
     font-size: 1.5rem;
     font-weight: 800;
     color: #2c3e50;
     text-decoration: none;
 }
 
-.logo span {
+.navbar-brand span {
     color: #3498db;
+    font-weight: 800;
 }
 
-/* Links de navegación */
-.nav-links ul {
+.navbar-nav .nav-item {
     display: flex;
     align-items: center;
-    list-style: none;
 }
 
-.nav-links li {
-    margin-left: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #3498db;
-}
 
 /* Estilo específico para el botón de Iniciar Sesión */
 .btn-login {
@@ -120,6 +104,13 @@ body {
         border-radius: 10px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         text-align: center;
+    }
+    
+    .reserva-form {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
     }
 
     .login-container h2 {
