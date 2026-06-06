@@ -25,39 +25,23 @@
     z-index: 1000;
 }
 
-/* Estilo del Nombre*/
-.logo a {
+.navbar-brand {
     font-size: 1.5rem;
     font-weight: 800;
     color: #2c3e50;
     text-decoration: none;
 }
 
-.logo span {
+.navbar-brand span {
     color: #3498db;
+    font-weight: 800;
 }
 
-/* Links de navegación */
-.nav-links ul {
+.navbar-nav .nav-item {
     display: flex;
     align-items: center;
-    list-style: none;
 }
 
-.nav-links li {
-    margin-left: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #3498db;
-}
 
 /* Estilo específico para el botón de Iniciar Sesión */
 .btn-login {
@@ -73,29 +57,6 @@
     background-color: #2980b9;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
-}
-
-/* Hero Section */
-.hero {
-    height: 80vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/focus.png');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--white);
-}
-
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
 }
 
 
