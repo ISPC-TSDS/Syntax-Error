@@ -83,88 +83,59 @@ body {
 }
 
 
-    /*--- Estilos para la página de about ---*/
-    .sobre-nosotros {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin:80px 10%;
-    }
-    
-    .sobre-nosotros h1 {
-        color: #2c3e50;
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
+  /*--- Estilos para la página de about ---*/
+.sobre-nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 80px 10%;
+}
 
-    .sobre-nosotros p {
-        font-size: 1.2rem;
-        line-height: 1.6;
-        color: #282828;
-        max-width: 800px;
-        text-align: center;
-    }
+.sobre-nosotros h1 {
+    color: #2c3e50;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
 
+.sobre-nosotros p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #282828;
+    max-width: 800px;
+    text-align: center;
+}
+
+.about-mision {
+    padding: 80px 15%;
+    background: var(--light);
+}
+
+.proposito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 15% 80px 15%;
+    background: var(--light);
+}
+
+.proposito h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.proposito p {
+    max-width: 800px;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+@media (max-width: 576px) {
     .about-mision {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 1rem;
-        padding: 80px 15%;
-        background: var(--light);
+        padding: 40px 5%;
     }
-
-    .mision h2 {
-        color: #2c3e50;
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
-
-    .mision p {
-        color: #282828;
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
-
-    .mision ul li{
-        color: #282828;
-        font-size: 1.1rem;
-        line-height: 1.2;
-        margin: 0px 0px 10px 20px;
-    }
-
-    .equipo-img img {
-        width: 100%;
-        object-fit: cover;
-    }
-
-    .proposito {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding:0px 15% 80px 15%;
-        background: var(--light);
-    }
-
-    .proposito h2 {
-        color: #2c3e50;
-        font-size: 2rem;
-        max-width: 800px;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .proposito p {
-        color: #282828;
-        font-size: 1.2rem;
-        max-width: 800px;;
-        text-align: left;
-        margin-bottom: 1.5rem;
-    }
+}
 
 /*--- Estilos para el dashboard admin ---*/
 
