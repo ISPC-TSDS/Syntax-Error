@@ -166,7 +166,7 @@ body {
         margin-bottom: 1.5rem;
     }
 
-    /*--- Estilos para el dashboard admin ---*/
+/*--- Estilos para el dashboard admin ---*/
 
     .dashboard-container-admin {
         padding: 80px 10%;
@@ -195,6 +195,8 @@ body {
         transition: transform 0.3s;
         cursor: pointer;
         text-align: center;
+        text-decoration: none;
+        color: inherit;
     }
 
     .card_admin:hover {
@@ -239,31 +241,9 @@ body {
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s;
         cursor: pointer;
-
         text-align: center;
         text-decoration: none;
         color: inherit;
-    }
-
-    .card_admin:hover {
-        transform: translateY(-10px);
-    }
-
-    .card_admin h2 {
-        color: var(--primary);
-        margin-bottom: 20px;
-        font-size: 1.5rem;
-        min-height: 60px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .card_admin p {
-        color: #666;
-        font-size: 0.95rem;
-        line-height: 1.6;
     }
 
     .admin-table-header {
@@ -277,73 +257,11 @@ body {
         color: var(--primary);
     }
 
-    .btn-create-room {
-        background: var(--accent);
-        color: white;
-        border: none;
-        padding: 12px 20px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: 0.3s;
-    }
-
-    .btn-create-room:hover {
-        background: #2980b9;
-    }
-
-    .admin-table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    .admin-table thead {
-        background: var(--primary);
-        color: white;
-    }
-
     .admin-table th,
     .admin-table td {
         padding: 16px;
         text-align: left;
         border-bottom: 1px solid #ddd;
-    }
-
-    .admin-table tbody tr:hover {
-        background: #f9f9f9;
-    }
-
-    .btn-edit {
-        background: #f39c12;
-        color: white;
-        border: none;
-        padding: 8px 14px;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-right: 10px;
-    }
-
-    .btn-delete {
-        background: #e74c3c;
-        color: white;
-        border: none;
-        padding: 8px 14px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-
-        .admin-table-header {
-            flex-direction: column;
-            gap: 20px;
-            align-items: flex-start;
-        }
-
-        .admin-table {
-            display: block;
-            overflow-x: auto;
-        }
     }
 
 /* --- Estilos para la página de Registro --- */
