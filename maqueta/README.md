@@ -60,6 +60,12 @@ _Ejemplo: `feat: agregar formulario de registro en el módulo de usuarios`_
 
 La maqueta es una versión estática en HTML/CSS que representa el diseño visual del sistema, sin funcionalidad de backend.
 
+## 🛠️ Créditos y Referencias
+
+Este proyecto fue diseñado tomando como referencia la plantilla **Album** de Bootstrap v4.0. 
+
+* **Plantilla original:** [Bootstrap 4.0 Album Example](https://getbootstrap.com/docs/4.0/examples/album/)
+
 ### Requisitos previos
 
 - Navegador web moderno (Google Chrome, Firefox, Edge).
