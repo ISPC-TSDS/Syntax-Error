@@ -42,9 +42,29 @@ En muchas organizaciones, la gestión de salas de reuniones y áreas de coworkin
 
 ---
 
+## 📌 Convención de Commits
+
+Para mantener el historial del repositorio limpio y organizado, el equipo utiliza la siguiente estructura para los mensajes de commit:
+
+* **`feat:`** Para nuevas funcionalidades.
+* **`fix:`** Resolución de fallos (bugs).
+* **`docs:`** Cambios en la documentación.
+* **`style:`** Ajustes de formato, puntos y comas, espacios (no afecta el funcionamiento del código).
+* **`refactor:`** Cambios en el código que no alteran el comportamiento ni añaden funcionalidades (optimización).
+
+_Ejemplo: `feat: agregar formulario de registro en el módulo de usuarios`_
+
+---
+
 ## 🚀 Instalación y ejecución de la maqueta
 
 La maqueta es una versión estática en HTML/CSS que representa el diseño visual del sistema, sin funcionalidad de backend.
+
+## 🛠️ Créditos y Referencias
+
+Este proyecto fue diseñado tomando como referencia la plantilla **Album** de Bootstrap v4.0. 
+
+* **Plantilla original:** [Bootstrap 4.0 Album Example](https://getbootstrap.com/docs/4.0/examples/album/)
 
 ### Requisitos previos
 
