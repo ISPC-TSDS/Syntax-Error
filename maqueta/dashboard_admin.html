@@ -54,18 +54,18 @@
                 <h2>Administrar Salas</h2>
                 <p>Crear, editar o eliminar salas disponibles.</p>
             </a>
-            <div class="card_admin">
+            <a href="#tabla-reservas" class="card_admin">
                 <h2>Gestionar Reservas</h2>
                 <p>Ver y administrar las reservas realizadas.</p>
-            </div>
-            <div class="card_admin">
+            </a>
+            <a href="#tabla-usuarios" class="card_admin">
                 <h2>Gestionar Usuarios</h2>
                 <p>Administrar cuentas y permisos de usuarios.</p>
-            </div>
-            <div class="card_admin">
+            </a>
+            <a href="#ver-reportes" class="card_admin">
                 <h2>Ver Reportes</h2>
                 <p>Consultar estadísticas e información del sistema.</p>
-            </div>
+            </a>
         </div>
 
         <section id="tabla-salas" class="admin-table-section">
@@ -169,6 +169,260 @@
                     </tbody>
 
                 </table>
+            </div>
+
+        </section>
+        <section id="tabla-reservas" class="admin-table-section">
+
+            <div class="admin-table-header">
+                <h2>Gestionar Reservas</h2>
+            </div>
+
+            <div class="table-responsive">
+                <table class="admin-table table table-hover align-middle">
+
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Usuario</th>
+                            <th>Sala</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Juan Pérez</td>
+                            <td>The Collaboration Hub</td>
+                            <td>15/06/2026</td>
+                            <td>09:00</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm">
+                                    Modificar
+                                </button>
+
+                                <button class="btn btn-danger btn-sm">
+                                    Dar de Baja
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>María Gómez</td>
+                            <td>The Focus Zone</td>
+                            <td>15/06/2026</td>
+                            <td>14:00</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm">
+                                    Modificar
+                                </button>
+
+                                <button class="btn btn-danger btn-sm">
+                                    Dar de Baja
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Pedro López</td>
+                            <td>The Code Corner</td>
+                            <td>16/06/2026</td>
+                            <td>11:00</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm">
+                                    Modificar
+                                </button>
+
+                                <button class="btn btn-danger btn-sm">
+                                    Dar de Baja
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+        </section>
+        <section id="tabla-usuarios" class="admin-table-section">
+
+            <div class="admin-table-header">
+                <h2>Gestionar Usuarios</h2>
+            </div>
+
+            <div class="table-responsive">
+                <table class="admin-table table table-hover align-middle">
+
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Juan Pérez</td>
+                            <td>juan@mail.com</td>
+                            <td>
+                                <span class="badge bg-primary">
+                                    Usuario
+                                </span>
+                            </td>
+                            <td>
+                                <button class="btn btn-info btn-sm">
+                                    Ver
+                                </button>
+
+                                <button class="btn btn-warning btn-sm">
+                                    Administrar
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>María Gómez</td>
+                            <td>maria@mail.com</td>
+                            <td>
+                                <span class="badge bg-danger">
+                                    Administrador
+                                </span>
+                            </td>
+                            <td>
+                                <button class="btn btn-info btn-sm">
+                                    Ver
+                                </button>
+
+                                <button class="btn btn-warning btn-sm">
+                                    Administrar
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Pedro López</td>
+                            <td>pedro@mail.com</td>
+                            <td>
+                                <span class="badge bg-primary">
+                                    Usuario
+                                </span>
+                            </td>
+                            <td>
+                                <button class="btn btn-info btn-sm">
+                                    Ver
+                                </button>
+
+                                <button class="btn btn-warning btn-sm">
+                                    Administrar
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+        </section>
+        <section id="ver-reportes" class="admin-table-section">
+
+            <div class="admin-table-header">
+                <h2>Reportes y Estadísticas</h2>
+            </div>
+
+            <!-- Métricas rápidas -->
+            <div class="cards-container-admin">
+
+                <div class="card_admin">
+                    <h2>125</h2>
+                    <p>Reservas Totales</p>
+                </div>
+
+                <div class="card_admin">
+                    <h2>35</h2>
+                    <p>Usuarios Registrados</p>
+                </div>
+
+                <div class="card_admin">
+                    <h2>4</h2>
+                    <p>Salas Disponibles</p>
+                </div>
+
+                <div class="card_admin">
+                    <h2>87%</h2>
+                    <p>Ocupación Promedio</p>
+                </div>
+
+            </div>
+
+            <br><br>
+
+            <!-- Tabla de estadísticas -->
+            <div class="table-responsive">
+                <table class="admin-table table table-hover align-middle">
+
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Sala</th>
+                            <th>Reservas</th>
+                            <th>Porcentaje de Uso</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>The Collaboration Hub</td>
+                            <td>48</td>
+                            <td>92%</td>
+                        </tr>
+
+                        <tr>
+                            <td>The Focus Zone</td>
+                            <td>35</td>
+                            <td>78%</td>
+                        </tr>
+
+                        <tr>
+                            <td>The Code Corner</td>
+                            <td>27</td>
+                            <td>65%</td>
+                        </tr>
+
+                        <tr>
+                            <td>The Idea Incubator</td>
+                            <td>15</td>
+                            <td>42%</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+            <br>
+
+            <!-- Espacio para gráfico -->
+            <div class="card_admin">
+                <h2>Gráfico de Uso de Salas</h2>
+                <p>
+                    Aquí se mostrará un gráfico de barras o torta con las
+                    estadísticas de utilización de los espacios.
+                </p>
             </div>
 
         </section>
