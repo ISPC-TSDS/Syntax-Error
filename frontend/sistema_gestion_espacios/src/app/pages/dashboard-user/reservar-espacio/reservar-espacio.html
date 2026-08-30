@@ -1,0 +1,188 @@
+
+<div class="section-header">
+  <h2>Reservar Espacio</h2>
+
+  <p>
+    Seleccioná una sala, fecha y horario para realizar una reserva.
+  </p>
+</div>
+
+
+<form
+  [formGroup]="reservaForm"
+  (ngSubmit)="confirmarReserva()"
+>
+
+  <!-- SALA -->
+  <div class="mb-4">
+
+    <label
+      for="sala"
+      class="form-label fw-semibold"
+    >
+      Seleccionar Sala
+    </label>
+
+    <select
+      id="sala"
+      class="form-select"
+      formControlName="sala"
+    >
+
+      <option value="">
+        Elegir sala disponible...
+      </option>
+
+      <option value="The Collaboration Hub">
+        The Collaboration Hub
+      </option>
+
+      <option value="The Focus Zone">
+        The Focus Zone
+      </option>
+
+      <option value="The Code Corner">
+        The Code Corner
+      </option>
+
+      <option value="The Idea Incubator">
+        The Idea Incubator
+      </option>
+
+    </select>
+
+    @if (campoInvalido('sala')) {
+      <div class="text-danger mt-2">
+        Debés seleccionar una sala.
+      </div>
+    }
+
+  </div>
+
+
+  <!-- FECHA Y HORA DESDE -->
+  <div class="mb-4">
+
+    <div class="input-group">
+
+      <div class="flex-grow-1">
+
+        <label
+          for="fechaDesde"
+          class="form-label fw-semibold"
+        >
+          Fecha desde
+        </label>
+
+        <input
+          id="fechaDesde"
+          type="date"
+          class="form-control"
+          formControlName="fechaDesde"
+        >
+
+      </div>
+
+
+      <div class="flex-grow-1">
+
+        <label
+          for="horaDesde"
+          class="form-label fw-semibold"
+        >
+          Hora desde
+        </label>
+
+        <input
+          id="horaDesde"
+          type="time"
+          class="form-control"
+          formControlName="horaDesde"
+        >
+
+      </div>
+
+    </div>
+
+    @if (
+      campoInvalido('fechaDesde') ||
+      campoInvalido('horaDesde')
+    ) {
+
+      <div class="text-danger mt-2">
+        La fecha y hora de inicio son obligatorias.
+      </div>
+
+    }
+
+  </div>
+
+
+  <!-- FECHA Y HORA HASTA -->
+  <div class="mb-4">
+
+    <div class="input-group">
+
+      <div class="flex-grow-1">
+
+        <label
+          for="fechaHasta"
+          class="form-label fw-semibold"
+        >
+          Fecha hasta
+        </label>
+
+        <input
+          id="fechaHasta"
+          type="date"
+          class="form-control"
+          formControlName="fechaHasta"
+        >
+
+      </div>
+
+
+      <div class="flex-grow-1">
+
+        <label
+          for="horaHasta"
+          class="form-label fw-semibold"
+        >
+          Hora hasta
+        </label>
+
+        <input
+          id="horaHasta"
+          type="time"
+          class="form-control"
+          formControlName="horaHasta"
+        >
+
+      </div>
+
+    </div>
+
+    @if (
+      campoInvalido('fechaHasta') ||
+      campoInvalido('horaHasta')
+    ) {
+
+      <div class="text-danger mt-2">
+        La fecha y hora de finalización son obligatorias.
+      </div>
+
+    }
+
+  </div>
+
+
+  <!-- BOTÓN -->
+  <button
+    type="submit"
+    class="btn btn-primary w-100 py-2"
+  >
+    Confirmar Reserva
+  </button>
+
+</form>
+```
