@@ -6,9 +6,7 @@ import { Footer } from '../../shared/footer/footer';
 @Component({
   selector: 'app-not-found',
   imports: [
-    RouterLink,
-    Nav,
-    Footer
+    RouterLink
   ],
   templateUrl: './not-found.html',
   styleUrl: './not-found.css'
