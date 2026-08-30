@@ -16,7 +16,7 @@ import { HistorialReservas } from './pages/dashboard-user/historial-reservas/his
 export const routes: Routes = [
   {
     path: '',
-    component: Home,
+    component: Landing,
     data: { title: 'Inicio' },
   },
 
