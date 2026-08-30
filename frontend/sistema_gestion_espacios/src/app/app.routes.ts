@@ -11,7 +11,7 @@ import { DashboardUser } from './pages/dashboard-user/dashboard-user';
 export const routes: Routes = [
   {
     path: '',
-    component: Landing,
+    component: Home,
     data: { title: 'Inicio' },
   },
   {
