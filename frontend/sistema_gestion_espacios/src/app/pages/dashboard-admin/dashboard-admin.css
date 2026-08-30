@@ -1,0 +1,130 @@
+/* =========================================
+DASHBOARD ADMIN
+========================================= */
+
+.dashboard-container-admin {
+padding: 80px 10%;
+background: var(--light);
+min-height: 100vh;
+}
+
+/* =========================================
+TÍTULO
+========================================= */
+
+.title {
+text-align: center;
+margin-bottom: 50px;
+font-size: 2.5rem;
+color: var(--primary);
+}
+
+/* =========================================
+TARJETAS DEL DASHBOARD
+========================================= */
+
+.card_admin {
+background: var(--white);
+border-radius: 10px;
+padding: 40px 25px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+color: inherit;
+}
+
+.card_admin:hover {
+transform: translateY(-10px);
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card_admin h2 {
+color: var(--primary);
+margin-bottom: 20px;
+font-size: 1.5rem;
+min-height: 60px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.card_admin p {
+color: #666;
+font-size: 0.95rem;
+line-height: 1.6;
+}
+
+/* =========================================
+SECCIONES DE ADMINISTRACIÓN
+========================================= */
+
+.admin-table-section {
+margin-top: 80px;
+background: var(--white);
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+ENCABEZADO DE LAS TABLAS
+========================================= */
+
+.admin-table-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 30px;
+}
+
+.admin-table-header h2 {
+color: var(--primary);
+margin-bottom: 0;
+}
+
+/* =========================================
+TABLAS
+========================================= */
+
+.admin-table th,
+.admin-table td {
+padding: 16px;
+text-align: left;
+border-bottom: 1px solid #ddd;
+}
+
+/* =========================================
+MÉTRICAS DE REPORTES
+========================================= */
+
+.cards-container-admin {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 30px;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+.dashboard-container-admin {
+padding: 50px 5%;
+}
+
+.admin-table-section {
+padding: 25px;
+margin-top: 50px;
+}
+
+.admin-table-header {
+flex-direction: column;
+align-items: flex-start;
+gap: 15px;
+}
+
+}
