@@ -8,10 +8,8 @@ import { Footer } from '../../shared/footer/footer';
   selector: 'app-dashboard-user',
   imports: [
     RouterLink,
-    RouterOutlet,
-    Nav,
-    Footer
-  ],
+    RouterOutlet
+],
   templateUrl: './dashboard-user.html',
   styleUrl: './dashboard-user.css',
 })
