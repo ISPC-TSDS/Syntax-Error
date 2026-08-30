@@ -1,9 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
-  imports: [],
+  standalone: true,
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './register.html',
-  styleUrl: './register.css',
+  styleUrls: ['./register.css']
 })
-export class Register {}
+export class Register {
+  private fb = inject(FormBuilder);
+
+  registerForm = this.fb.group({
+    nombre: ['', [Validators.required]],
+    apellido: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(8)]],
+    confirmPassword: ['', [Validators.required]]
+  });
+
+  errorMessage = '';
+
+  onSubmit() {
+    if (this.registerForm.invalid) {
+      this.errorMessage = 'Por favor, completá los campos correctamente.';
+      this.registerForm.markAllAsTouched();
+      return;
+    }
+
+    const { password, confirmPassword } = this.registerForm.value;
+
+    if (password !== confirmPassword) {
+      this.errorMessage = 'Las contraseñas no coinciden.';
+      return;
+    }
+
+    this.errorMessage = '';
+    console.log('Datos de registro:', this.registerForm.value);
+  }
+}
