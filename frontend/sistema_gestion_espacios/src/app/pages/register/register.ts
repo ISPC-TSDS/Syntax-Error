@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { RouterLink,Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,6 +11,7 @@ import { RouterLink } from '@angular/router';
 })
 export class Register {
   private fb = inject(FormBuilder);
+  private router = inject(Router);
 
   registerForm = this.fb.group({
     nombre: ['', [Validators.required]],
@@ -38,5 +39,6 @@ export class Register {
 
     this.errorMessage = '';
     console.log('Datos de registro:', this.registerForm.value);
+    this.router.navigate(['/login']);
   }
 }
