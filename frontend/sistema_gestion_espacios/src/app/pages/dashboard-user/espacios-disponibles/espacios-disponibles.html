@@ -1,0 +1,57 @@
+<div class="section-header">
+  <h2>Espacios Disponibles</h2>
+  <p>
+    Consultá los espacios disponibles para realizar una reserva.
+  </p>
+</div>
+
+<div class="table-responsive">
+
+  <table class="table table-striped table-hover align-middle">
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Sala</th>
+        <th>Capacidad</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      @for (espacio of espacios; track espacio.id) {
+
+        <tr>
+
+          <td>
+            {{ espacio.id }}
+          </td>
+
+          <td>
+            {{ espacio.nombre }}
+          </td>
+
+          <td>
+            {{ espacio.capacidad }} personas
+          </td>
+
+          <td>
+            <span
+              class="badge"
+              [class.bg-success]="espacio.estado === 'Disponible'"
+              [class.bg-danger]="espacio.estado === 'Ocupada'"
+            >
+              {{ espacio.estado }}
+            </span>
+          </td>
+
+        </tr>
+
+      }
+
+    </tbody>
+
+  </table>
+
+</div>
