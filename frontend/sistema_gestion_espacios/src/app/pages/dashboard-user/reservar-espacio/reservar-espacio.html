@@ -1,9 +1,9 @@
 
 <div class="section-header">
-  <h2>Reservar Espacio</h2>
+  <h2>Reservar laboratorio</h2>
 
   <p>
-    Seleccioná una sala, fecha y horario para realizar una reserva.
+    Seleccioná un laboratorio, fecha y horario para realizar una reserva.
   </p>
 </div>
 
@@ -13,14 +13,14 @@
   (ngSubmit)="confirmarReserva()"
 >
 
-  <!-- SALA -->
+  <!-- LABORATORIO -->
   <div class="mb-4">
 
     <label
       for="sala"
       class="form-label fw-semibold"
     >
-      Seleccionar Sala
+      Seleccionar laboratorio
     </label>
 
     <select
@@ -30,30 +30,22 @@
     >
 
       <option value="">
-        Elegir sala disponible...
+        Elegir laboratorio disponible...
       </option>
 
-      <option value="The Collaboration Hub">
-        The Collaboration Hub
+      <option value="Laboratorio Ciclo Básico">
+        Laboratorio Ciclo Básico
       </option>
 
-      <option value="The Focus Zone">
-        The Focus Zone
-      </option>
-
-      <option value="The Code Corner">
-        The Code Corner
-      </option>
-
-      <option value="The Idea Incubator">
-        The Idea Incubator
+      <option value="Laboratorio Ciclo Orientado">
+        Laboratorio Ciclo Orientado
       </option>
 
     </select>
 
     @if (campoInvalido('sala')) {
       <div class="text-danger mt-2">
-        Debés seleccionar una sala.
+        Debés seleccionar un laboratorio.
       </div>
     }
 
@@ -181,7 +173,7 @@
     type="submit"
     class="btn btn-primary w-100 py-2"
   >
-    Confirmar Reserva
+    Confirmar reserva
   </button>
 
 </form>

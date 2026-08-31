@@ -1,7 +1,7 @@
 <div class="section-header">
-  <h2>Espacios Disponibles</h2>
+  <h2>Laboratorios disponibles</h2>
   <p>
-    Consultá los espacios disponibles para realizar una reserva.
+    Consultá los laboratorios disponibles para realizar una reserva.
   </p>
 </div>
 
@@ -12,7 +12,7 @@
     <thead>
       <tr>
         <th>ID</th>
-        <th>Sala</th>
+        <th>Laboratorio</th>
         <th>Capacidad</th>
         <th>Estado</th>
       </tr>
@@ -33,14 +33,14 @@
           </td>
 
           <td>
-            {{ espacio.capacidad }} personas
+            {{ espacio.capacidad }} estudiantes
           </td>
 
           <td>
             <span
               class="badge"
               [class.bg-success]="espacio.estado === 'Disponible'"
-              [class.bg-danger]="espacio.estado === 'Ocupada'"
+              [class.bg-danger]="espacio.estado === 'Ocupado'"
             >
               {{ espacio.estado }}
             </span>

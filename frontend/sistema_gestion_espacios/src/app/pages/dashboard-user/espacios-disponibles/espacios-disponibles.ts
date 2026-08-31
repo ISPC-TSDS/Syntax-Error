@@ -18,27 +18,15 @@ export class EspaciosDisponibles {
   espacios: Espacio[] = [
     {
       id: 1,
-      nombre: 'The Collaboration Hub',
-      capacidad: 12,
+      nombre: 'Laboratorio Ciclo Básico',
+      capacidad: 32,
       estado: 'Disponible'
     },
     {
       id: 2,
-      nombre: 'The Focus Zone',
-      capacidad: 6,
-      estado: 'Disponible'
-    },
-    {
-      id: 3,
-      nombre: 'The Code Corner',
-      capacidad: 8,
-      estado: 'Ocupada'
-    },
-    {
-      id: 4,
-      nombre: 'The Idea Incubator',
-      capacidad: 15,
-      estado: 'Disponible'
+      nombre: 'Laboratorio Ciclo Orientado',
+      capacidad: 32,
+      estado: 'Ocupado'
     }
   ];
 
