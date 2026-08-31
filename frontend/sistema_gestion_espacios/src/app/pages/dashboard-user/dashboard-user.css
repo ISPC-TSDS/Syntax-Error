@@ -4,17 +4,6 @@
   min-height: 100vh;
 }
 
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #2c3e50;
-  text-decoration: none;
-}
-
-.navbar-brand span {
-  color: #3498db;
-}
-
 .dashboard-container {
   flex: 1;
   padding: 60px 10%;
