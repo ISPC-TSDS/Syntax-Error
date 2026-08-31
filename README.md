@@ -1,188 +1,179 @@
-# 🏢 GestEspacios — Sistema de Gestión de Espacios
+# 🏢 Syntax Error — Sistema de Gestión de Espacios
 
-## 📌 Introducción
+## 📌 Descripción general
 
-En muchas organizaciones, la gestión de salas de reuniones y espacios de coworking se realiza mediante canales informales como mensajes, planillas manuales o acuerdos verbales. Esto puede generar superposición de turnos, pérdida de tiempo y dificultades para llevar un control organizado de las reservas.
+Este repositorio contiene el proyecto de una aplicación web para gestionar la reserva y administración de espacios compartidos, con foco en laboratorios docentes de la institución. La solución está pensada para facilitar la consulta de disponibilidad, la reserva de turnos y la administración de usuarios y reportes.
 
-**GestEspacios** es una aplicación web desarrollada para centralizar y digitalizar la gestión de espacios compartidos dentro de una organización.
-
-El sistema permite a los usuarios consultar los espacios disponibles, realizar reservas y consultar sus reservas e historial. A su vez, contempla diferentes roles de usuario y un panel de administración para gestionar las funcionalidades correspondientes.
-
-El proyecto forma parte de una propuesta educativa desarrollada por estudiantes de la **Tecnicatura Superior en Desarrollo de Software del ISPC**.
+La parte principal del desarrollo actual está en el frontend Angular, que presenta una landing page, paneles para docentes y administración, formularios y navegación por rutas.
 
 ---
 
-## ✨ Funcionalidades
+## ✨ Funcionalidades principales
 
-### 👤 Módulo de Usuarios
+### 👤 Frontend
+- Landing page institucional.
+- Login, registro y recuperación de contraseña.
+- Dashboard para usuario/docente.
+- Dashboard para administrador.
+- Visualización de laboratorios disponibles.
+- Reserva de laboratorio con fecha y horario.
+- Consulta de reservas confirmadas.
+- Historial de reservas.
+- Gestión de usuarios, reservas y reportes en la vista administrativa.
+- Páginas de error 404 y navegación con Angular Router.
 
-* Registro de nuevos usuarios.
-* Inicio de sesión.
-* Recuperación de contraseña.
-* Formularios con validaciones.
-* Navegación diferenciada según el rol del usuario.
-* Panel de usuario.
+### 📅 Flujo de usuario
+- Consultar laboratorios disponibles.
+- Reservar un espacio con fecha y horario.
+- Ver reservas confirmadas.
+- Revisar el historial de reservas previas.
 
-### 📅 Gestión de Reservas
-
-El dashboard del usuario permite:
-
-* Consultar espacios disponibles.
-* Seleccionar un espacio para realizar una reserva.
-* Indicar fecha y horario de inicio.
-* Indicar fecha y horario de finalización.
-* Consultar reservas confirmadas.
-* Consultar el historial de reservas.
-
-### 🛠️ Panel de Administración
-
-El proyecto contempla un dashboard específico para usuarios con rol administrador, destinado a las funcionalidades de gestión del sistema.
-
-### 🌐 Navegación y experiencia de usuario
-
-* Landing Page.
-* Sección **Quiénes Somos**.
-* Dashboard de usuario.
-* Dashboard de administrador.
-* Página personalizada para rutas no encontradas (404).
-* Navegación mediante Angular Router.
-* Rutas hijas para las diferentes funcionalidades del dashboard.
-* Redirección automática a la sección correspondiente del dashboard.
-* Componentes compartidos de navegación y footer.
-* Diseño responsive para dispositivos móviles, tablets y escritorio.
+### 🛠️ Panel administrativo
+- Administrar laboratorios.
+- Gestionar reservas realizadas.
+- Gestionar docentes/usuarios del sistema.
+- Visualizar reportes y métricas de uso.
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## 🧩 Tecnologías utilizadas
 
 ### Frontend
+- Angular 21
+- TypeScript
+- HTML5
+- CSS3
+- Bootstrap 5
+- Angular Router
+- Reactive Forms
+- RxJS
 
-* **Angular 21**
-* **TypeScript**
-* **HTML5**
-* **CSS3**
-* **Bootstrap 5**
-* **Angular Router**
-* **Angular Reactive Forms**
-* **RxJS**
-
-### Arquitectura
-
-La aplicación frontend está desarrollada como una **SPA (Single Page Application)** utilizando Angular.
-
-Se implementaron:
-
-* Componentes standalone.
-* Rutas generales.
-* Rutas hijas (nested routes).
-* Ruta por defecto mediante redirección.
-* Gestión de rutas no encontradas mediante página 404.
-* Componentes reutilizables mediante una carpeta `shared`.
-* Formularios reactivos con validaciones.
+### Estructura general
+- SPA con Angular
+- Componentes standalone
+- Rutas principales y rutas hijas
+- Diseño responsive
 
 ### Backend
-
-El proyecto contempla un backend desarrollado con **Django**, actualmente en desarrollo.
+- El proyecto contempla una capa backend en desarrollo, con enfoque en integración futura con la aplicación web.
 
 ### Modelado
-
-* UML.
-* Documentación de arquitectura del sistema.
+- Documentación y diagramas del sistema en la carpeta de modelado.
 
 ---
 
-## 🚀 Instalación y ejecución
+## 🚀 Requisitos previos
 
-### Requisitos previos
+Necesitás tener instalado:
 
-Para ejecutar el frontend se requiere:
+- Node.js 18 o superior
+- npm 9 o superior
+- Git
+- Un navegador web moderno
 
-* **Node.js**
-* **npm**
-* Angular CLI (puede utilizarse mediante `npx`)
-* Un navegador web moderno.
+Verificá la versión con:
 
-### 📥 Clonar el repositorio
+```bash
+node -v
+npm -v
+```
+
+---
+
+## 📥 Instalación
+
+Cloná el repositorio:
 
 ```bash
 git clone https://github.com/ISPC-TSDS/Syntax-Error.git
 ```
 
-Ingresar al proyecto:
+Entrá al proyecto:
 
 ```bash
 cd Syntax-Error
 ```
 
-### ▶️ Ejecutar el frontend
-
-Ingresar a la carpeta del proyecto Angular:
+Luego instalá las dependencias del frontend:
 
 ```bash
 cd frontend/sistema_gestion_espacios
-```
-
-Instalar las dependencias:
-
-```bash
 npm install
 ```
 
-Iniciar el servidor de desarrollo:
+---
+
+## ▶️ Ejecución en desarrollo
+
+Para levantar la aplicación localmente:
 
 ```bash
 npm start
 ```
 
-La aplicación estará disponible normalmente en:
-
-```text
-http://localhost:4200
-```
-
-### 🏗️ Generar una compilación
-
-Para comprobar que el proyecto puede compilarse correctamente:
+O bien:
 
 ```bash
-ng build
+npx ng serve
 ```
 
-El resultado de la compilación se genera dentro de la carpeta `dist/`.
+La aplicación estará disponible en:
+
+```text
+http://localhost:4200/
+```
 
 ---
 
-## 🧭 Ruteo de la aplicación
+## 🏗️ Generación de build
 
-La aplicación utiliza **Angular Router** para administrar la navegación.
+Para compilar el proyecto para producción:
 
-Entre las rutas principales se encuentran:
+```bash
+npm run build
+```
 
-| Ruta                        | Descripción                |
-| --------------------------- | -------------------------- |
-| `/`                         | Landing Page               |
-| `/about`                    | Quiénes Somos              |
-| `/login`                    | Inicio de sesión           |
-| `/register`                 | Registro                   |
-| `/recover-password`         | Recuperación de contraseña |
-| `/dashboard/admin`          | Dashboard de administrador |
-| `/dashboard/user`           | Dashboard de usuario       |
-| `/dashboard/user/espacios`  | Espacios disponibles       |
-| `/dashboard/user/reservar`  | Reservar espacio           |
-| `/dashboard/user/reservas`  | Reservas confirmadas       |
-| `/dashboard/user/historial` | Historial de reservas      |
+El resultado se genera en la carpeta:
 
-La ruta `/dashboard/user` redirige automáticamente a `/dashboard/user/espacios`.
-
-Las rutas inexistentes son gestionadas mediante una página personalizada de **Error 404**.
+```text
+dist/
+```
 
 ---
 
-## 📝 Formularios
+## 🧪 Ejecución de pruebas
 
-El frontend utiliza **Reactive Forms de Angular** para implementar formularios con validaciones.
+Para correr las pruebas del proyecto:
 
-Se incluyen validaciones para campos obligatorios, formato de correo electrónico, longitud mínima de contraseña y otros controles correspondientes a los formularios de la aplicación.
+```bash
+npm test
+```
+
+---
+
+## 🧭 Rutas principales actuales
+
+La aplicación Angular utiliza rutas como estas:
+
+| Ruta | Descripción |
+| --- | --- |
+| `/` | Landing page |
+| `/about` | Quiénes somos |
+| `/login` | Inicio de sesión |
+| `/register` | Registro |
+| `/recover-password` | Recuperar contraseña |
+| `/dashboard/admin` | Dashboard administrador |
+| `/dashboard/admin/salas` | Administrar salas/laboratorios |
+| `/dashboard/admin/reservas` | Gestionar reservas |
+| `/dashboard/admin/usuarios` | Gestionar usuarios/docentes |
+| `/dashboard/admin/reportes` | Ver reportes |
+| `/dashboard/user` | Dashboard docente/usuario |
+| `/dashboard/user/espacios` | Laboratorios disponibles |
+| `/dashboard/user/reservar` | Reservar laboratorio |
+| `/dashboard/user/reservas` | Reservas confirmadas |
+| `/dashboard/user/historial` | Historial de reservas |
+
+Las rutas inexistentes se manejan con una página 404 personalizada.
 
 ---
 
@@ -190,62 +181,60 @@ Se incluyen validaciones para campos obligatorios, formato de correo electrónic
 
 ```text
 Syntax-Error/
+├── README.md
 ├── frontend/
 │   └── sistema_gestion_espacios/
-│       ├── src/
-│       │   └── app/
-│       │       ├── pages/
-│       │       │   ├── landing/
-│       │       │   ├── about/
-│       │       │   ├── login/
-│       │       │   ├── register/
-│       │       │   ├── recover-password/
-│       │       │   ├── dashboard-admin/
-│       │       │   ├── dashboard-user/
-│       │       │   └── not-found/
-│       │       │
-│       │       ├── shared/
-│       │       │   ├── nav/
-│       │       │   └── footer/
-│       │       │
-│       │       ├── app.routes.ts
-│       │       └── ...
-│       │
 │       ├── angular.json
 │       ├── package.json
-│       └── tsconfig.json
-│
+│       ├── tsconfig.json
+│       ├── public/
+│       └── src/
+│           ├── app/
+│           │   ├── pages/
+│           │   │   ├── landing/
+│           │   │   ├── about/
+│           │   │   ├── login/
+│           │   │   ├── register/
+│           │   │   ├── recover-password/
+│           │   │   ├── dashboard-admin/
+│           │   │   ├── dashboard-user/
+│           │   │   └── not-found/
+│           │   ├── shared/
+│           │   ├── app.routes.ts
+│           │   ├── app.ts
+│           │   └── app.css
+│           ├── index.html
+│           ├── main.ts
+│           └── styles.css
 ├── backend/
-│   └── ...               # API REST con Django
-│
+│   └── ...
 ├── modelado/
-│   └── ...               # Diagramas UML y documentación
-│
-└── README.md
+│   └── ...
+└── maqueta/
+    └── ...
 ```
 
 ---
 
 ## 👥 Equipo
 
-| Apellido y Nombre                |      DNI | Usuario GitHub                                                   |
-| -------------------------------- | -------: | ---------------------------------------------------------------- |
-| Bianchi Nuñez, Víctor Andrés     | 42258135 | [@andresbianchiispc](https://github.com/andresbianchiispc)       |
-| Mondadori, Giselda Soledad       | 29255135 | [@G-Mon4](https://github.com/G-Mon4)                             |
-| Monje, Sofía Florencia           | 39420278 | [@somonje](https://github.com/somonje)                           |
-| Osess, Gastón Faustino Alejandro | 35588172 | [@cholobackcod](https://github.com/cholobackcod)                 |
-| Pierrestegui, Federico Martín    | 35257982 | [@pierresteguifederico](https://github.com/pierresteguifederico) |
-| Udovich, Federico David          | 42383964 | [@FedeUdovich](https://github.com/FedeUdovich)                   |
+| Apellido y Nombre | DNI | Usuario GitHub |
+| --- | ---: | --- |
+| Bianchi Nuñez, Víctor Andrés | 42258135 | [@andresbianchiispc](https://github.com/andresbianchiispc) |
+| Mondadori, Giselda Soledad | 29255135 | [@G-Mon4](https://github.com/G-Mon4) |
+| Monje, Sofía Florencia | 39420278 | [@somonje](https://github.com/somonje) |
+| Osess, Gastón Faustino Alejandro | 35588172 | [@cholobackcod](https://github.com/cholobackcod) |
+| Pierrestegui, Federico Martín | 35257982 | [@pierresteguifederico](https://github.com/pierresteguifederico) |
+| Udovich, Federico David | 42383964 | [@FedeUdovich](https://github.com/FedeUdovich) |
 
 ### 🎓 Docentes a cargo
-
-* Ivana Córsico
-* Carolina Ahumada
+- Ivana Córsico
+- Carolina Ahumada
 
 ---
 
 ## 📄 Licencia
 
-Proyecto educativo desarrollado en el marco del ciclo lectivo 2026 del **ISPC — Tecnicatura Superior en Desarrollo de Software**.
+Proyecto educativo desarrollado en el marco del ciclo lectivo 2026 del ISPC — Tecnicatura Superior en Desarrollo de Software.
 
-Todos los derechos reservados al equipo **Syntax Error**.
+Todos los derechos reservados al equipo Syntax Error.
