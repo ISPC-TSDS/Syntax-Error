@@ -4,7 +4,7 @@ import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
 export interface Lab {
-  id?: number | string;
+  id?: number;
   nombre: string;
   ciclo?: string;
   descripcion?: string;

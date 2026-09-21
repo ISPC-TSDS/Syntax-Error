@@ -18,7 +18,7 @@ export class Salas implements OnInit {
   labs: Lab[] = [];
   loading = true;
   showForm = false;
-  editingLabId: number | string | null = null;
+  editingLabId: number | null = null;
 
   labForm: FormGroup;
 
@@ -100,13 +100,11 @@ export class Salas implements OnInit {
         }
       });
     } else {
-      let nextId = 1;
-      if (this.labs && this.labs.length > 0) {
-        const numericIds = this.labs.map(l => Number(l.id)).filter(id => !isNaN(id));
-        if (numericIds.length > 0) {
-          nextId = Math.max(...numericIds) + 1;
-        }
-      }
+      const numericIds = this.labs
+        .map(l => Number(l.id))
+        .filter(id => Number.isFinite(id));
+
+      const nextId = numericIds.length > 0 ? Math.max(...numericIds) + 1 : 1;
       labData.id = nextId;
 
       this.labsService.createLab(labData).subscribe({
@@ -138,4 +136,4 @@ export class Salas implements OnInit {
       });
     }
   }
-}
+}
