@@ -43,13 +43,11 @@ export class Register {
 
     this.usersService.getUsers().subscribe({
       next: (existing) => {
-        let nextId = 1;
-        if (existing && existing.length > 0) {
-          const numericIds = existing.map(u => Number(u.id)).filter(id => !isNaN(id));
-          if (numericIds.length > 0) {
-            nextId = Math.max(...numericIds) + 1;
-          }
-        }
+        const numericIds = (existing ?? [])
+          .map((user) => Number(user.id))
+          .filter((id) => !Number.isNaN(id));
+
+        const nextId = numericIds.length > 0 ? Math.max(...numericIds) + 1 : 1;
 
         const newUser: User = {
           id: nextId,
@@ -74,6 +72,7 @@ export class Register {
       },
       error: () => {
         const newUser: User = {
+          id: 1,
           nombre: nombre!,
           apellido: apellido!,
           email: email!,
@@ -90,4 +89,4 @@ export class Register {
     });
   }
 }
-
+

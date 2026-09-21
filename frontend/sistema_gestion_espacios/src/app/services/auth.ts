@@ -4,7 +4,7 @@ import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
 export interface User {
-  id?: number | string;
+  id?: number;
   nombre: string;
   apellido: string;
   email: string;
