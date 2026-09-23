@@ -4,7 +4,7 @@
 
 Este repositorio contiene el proyecto de una aplicación web para gestionar la reserva y administración de espacios compartidos, con foco en laboratorios docentes de la institución. La solución está pensada para facilitar la consulta de disponibilidad, la reserva de turnos y la administración de usuarios y reportes.
 
-La parte principal del desarrollo actual está en el frontend Angular, que presenta una landing page, paneles para docentes y administración, formularios y navegación por rutas.
+El frontend Angular consume una API de prueba (json-server) a través de servicios propios, con `HttpClient` y observables. Incluye landing page, paneles para docentes y administración, formularios reactivos y navegación por rutas.
 
 ---
 
@@ -12,25 +12,27 @@ La parte principal del desarrollo actual está en el frontend Angular, que prese
 
 ### 👤 Frontend
 - Landing page institucional.
-- Login, registro y recuperación de contraseña.
+- Login y registro conectados a la API.
+- Recuperación de contraseña.
 - Dashboard para usuario/docente.
 - Dashboard para administrador.
 - Visualización de laboratorios disponibles.
 - Reserva de laboratorio con fecha y horario.
 - Consulta de reservas confirmadas.
 - Historial de reservas.
-- Gestión de usuarios, reservas y reportes en la vista administrativa.
+- Gestión de laboratorios, reservas, usuarios y reportes en la vista administrativa.
 - Páginas de error 404 y navegación con Angular Router.
 
-### 📅 Flujo de usuario
+### 📅 Flujo de usuario (docente)
+- Iniciar sesión con las credenciales registradas en la API.
 - Consultar laboratorios disponibles.
 - Reservar un espacio con fecha y horario.
 - Ver reservas confirmadas.
 - Revisar el historial de reservas previas.
 
 ### 🛠️ Panel administrativo
-- Administrar laboratorios.
-- Gestionar reservas realizadas.
+- Administrar laboratorios (crear, editar, eliminar).
+- Gestionar reservas realizadas y su estado.
 - Gestionar docentes/usuarios del sistema.
 - Visualizar reportes y métricas de uso.
 
@@ -47,15 +49,19 @@ La parte principal del desarrollo actual está en el frontend Angular, que prese
 - Angular Router
 - Reactive Forms
 - RxJS
+- HttpClient
 
 ### Estructura general
 - SPA con Angular
 - Componentes standalone
+- Servicios centralizados para el acceso a datos
 - Rutas principales y rutas hijas
 - Diseño responsive
 
-### Backend
-- El proyecto contempla una capa backend en desarrollo, con enfoque en integración futura con la aplicación web.
+### Backend de prueba
+- `json-server` sirve `db.json` como API REST.
+- Colecciones: `users`, `labs` y `reservation`.
+- El frontend lo consume mediante servicios Angular (`AuthService`, `LabsService`, `ReservationService`, `UsersService`) usando `HttpClient` y observables.
 
 ### Modelado
 - Documentación y diagramas del sistema en la carpeta de modelado.
@@ -103,9 +109,46 @@ npm install
 
 ---
 
+## 🔌 Backend de prueba (json-server)
+
+La aplicación necesita la API levantada para funcionar. Abrí **dos terminales** dentro de `frontend/sistema_gestion_espacios`:
+
+```bash
+# Terminal 1 — API en http://localhost:3000
+npx json-server --watch db.json --port 3000
+
+# Terminal 2 — Aplicación en http://localhost:4200
+npm start
+```
+
+La URL de la API se configura en `src/environments/environment.ts`.
+
+### Usuarios de prueba
+
+| Rol | Correo | Contraseña |
+| --- | --- | --- |
+| Administrador | `carla.fernandez@escuela.edu.ar` | `Admin1234` |
+| Docente | `maria.lopez@escuela.edu.ar` | `Docente1234` |
+| Docente | `lucas.torres@escuela.edu.ar` | `Docente1234` |
+
+> Las contraseñas están en texto plano porque `json-server` es solo un backend de prueba académico. Un backend real debe guardarlas hasheadas.
+
+### Endpoints utilizados
+
+| Recurso | Operaciones | Usado en |
+| --- | --- | --- |
+| `GET /users?email=&password=` | GET | Login |
+| `/users` | GET, POST, PATCH, DELETE | Registro y gestión de usuarios (admin) |
+| `/labs` | GET, POST, PUT, DELETE | Espacios disponibles, reservar, administrar laboratorios |
+| `/reservation` | GET, POST, PATCH, DELETE | Reservar, reservas confirmadas, historial, gestión y reportes |
+
+Para volver a los datos originales, descartá los cambios locales de `db.json` con Git.
+
+---
+
 ## ▶️ Ejecución en desarrollo
 
-Para levantar la aplicación localmente:
+Con la API levantada (ver sección anterior), en otra terminal:
 
 ```bash
 npm start
@@ -137,16 +180,6 @@ El resultado se genera en la carpeta:
 
 ```text
 dist/
-```
-
----
-
-## 🧪 Ejecución de pruebas
-
-Para correr las pruebas del proyecto:
-
-```bash
-npm test
 ```
 
 ---
@@ -187,6 +220,7 @@ Syntax-Error/
 │       ├── angular.json
 │       ├── package.json
 │       ├── tsconfig.json
+│       ├── db.json                   # Datos de json-server (users, labs, reservation)
 │       ├── public/
 │       └── src/
 │           ├── app/
@@ -199,10 +233,12 @@ Syntax-Error/
 │           │   │   ├── dashboard-admin/
 │           │   │   ├── dashboard-user/
 │           │   │   └── not-found/
+│           │   ├── services/         # Acceso a datos con HttpClient
 │           │   ├── shared/
 │           │   ├── app.routes.ts
 │           │   ├── app.ts
 │           │   └── app.css
+│           ├── environments/
 │           ├── index.html
 │           ├── main.ts
 │           └── styles.css
