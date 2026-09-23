@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-import { RouterLink,Router } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
+import { AuthService, User } from '../../services/auth';
+import { UsersService } from '../../services/users';
 
 @Component({
   selector: 'app-register',
@@ -11,13 +13,15 @@ import { RouterLink,Router } from '@angular/router';
 })
 export class Register {
   private fb = inject(FormBuilder);
+  private authService = inject(AuthService);
+  private usersService = inject(UsersService);
   private router = inject(Router);
 
   registerForm = this.fb.group({
     nombre: ['', [Validators.required]],
     apellido: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(8)]],
+    password: ['', [Validators.required, Validators.minLength(4)]],
     confirmPassword: ['', [Validators.required]]
   });
 
@@ -30,15 +34,59 @@ export class Register {
       return;
     }
 
-    const { password, confirmPassword } = this.registerForm.value;
+    const { nombre, apellido, email, password, confirmPassword } = this.registerForm.value;
 
     if (password !== confirmPassword) {
       this.errorMessage = 'Las contraseñas no coinciden.';
       return;
     }
 
-    this.errorMessage = '';
-    console.log('Datos de registro:', this.registerForm.value);
-    this.router.navigate(['/login']);
+    this.usersService.getUsers().subscribe({
+      next: (existing) => {
+        const numericIds = (existing ?? [])
+          .map((user) => Number(user.id))
+          .filter((id) => !Number.isNaN(id));
+
+        const nextId = numericIds.length > 0 ? Math.max(...numericIds) + 1 : 1;
+
+        const newUser: User = {
+          id: nextId,
+          nombre: nombre!,
+          apellido: apellido!,
+          email: email!,
+          password: password!,
+          rol: 'docente'
+        };
+
+        this.authService.register(newUser).subscribe({
+          next: () => {
+            this.errorMessage = '';
+            alert('Usuario registrado con éxito. Iniciá sesión.');
+            this.router.navigate(['/login']);
+          },
+          error: (err) => {
+            console.error('Error al registrar usuario:', err);
+            this.errorMessage = 'No se pudo realizar el registro. Intente nuevamente.';
+          }
+        });
+      },
+      error: () => {
+        const newUser: User = {
+          id: 1,
+          nombre: nombre!,
+          apellido: apellido!,
+          email: email!,
+          password: password!,
+          rol: 'docente'
+        };
+        this.authService.register(newUser).subscribe({
+          next: () => {
+            alert('Usuario registrado con éxito. Iniciá sesión.');
+            this.router.navigate(['/login']);
+          }
+        });
+      }
+    });
   }
 }
+

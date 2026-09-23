@@ -26,12 +26,36 @@
             </a>
           </li>
 
-          <li class="nav-item mt-2 mt-md-0">
-            <a class="btn btn-outline-info rounded-pill px-4 fw-semibold d-inline-flex align-items-center shadow-sm"
-              routerLink="/login">
-              <i class="bi bi-box-arrow-in-right me-2"></i>Iniciar Sesión
-            </a>
-          </li>
+          @if (currentUser) {
+            <li class="nav-item">
+              <a
+                class="nav-link text-secondary fw-semibold px-3 rounded-pill hover-bg-light"
+                [routerLink]="currentUser.rol === 'admin' ? '/dashboard/admin' : '/dashboard/user'"
+                routerLinkActive="active text-info fw-bold"
+              >
+                <i class="bi bi-speedometer2 me-1"></i> Panel ({{ currentUser.rol | titlecase }})
+              </a>
+            </li>
+
+            <li class="nav-item d-flex align-items-center ms-md-2 mt-2 mt-md-0">
+              <span class="text-muted small me-3 fw-semibold">
+                Hola, {{ currentUser.nombre }}
+              </span>
+              <button
+                class="btn btn-outline-danger btn-sm rounded-pill px-3 fw-semibold"
+                (click)="logout()"
+              >
+                <i class="bi bi-box-arrow-right me-1"></i> Salir
+              </button>
+            </li>
+          } @else {
+            <li class="nav-item mt-2 mt-md-0">
+              <a class="btn btn-outline-info rounded-pill px-4 fw-semibold d-inline-flex align-items-center shadow-sm"
+                routerLink="/login">
+                <i class="bi bi-box-arrow-in-right me-2"></i>Iniciar Sesión
+              </a>
+            </li>
+          }
 
         </ul>
       </div>
