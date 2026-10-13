@@ -8,7 +8,7 @@ import { Router, RouterLink } from '@angular/router';
   standalone: true,
   imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './recover-password.html',
-  styleUrl: './recover-password.css',
+  styleUrls: ['./recover-password.css'],
 })
 export class RecoverPassword {
 

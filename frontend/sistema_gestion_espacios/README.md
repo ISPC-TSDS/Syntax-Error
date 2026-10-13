@@ -1,59 +1,97 @@
-# SistemaGestionEspacios
+# Sistema de Gestión de Espacios
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.22.
+Este proyecto es una aplicación web desarrollada con Angular para gestionar reservas y administración de espacios compartidos. La interfaz utiliza Bootstrap y cuenta con módulos para usuarios y administradores.
 
-## Development server
+## Información general
 
-To start a local development server, run:
+- Framework principal: Angular 21
+- Lenguaje: TypeScript
+- Estilos: Bootstrap 5
+- Estructura principal: componentes, páginas y rutas de navegación
+- Objetivo: facilitar la reserva, consulta y administración de espacios, salas y usuarios
 
-```bash
-ng serve
-```
+## Requisitos previos
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Antes de ejecutar el proyecto, asegurate de tener instalado:
 
-## Code scaffolding
+- Node.js 18 o superior
+- npm 9 o superior
+- Git
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Puedes verificarlo con:
 
 ```bash
-ng generate --help
+node -v
+npm -v
 ```
 
-## Building
+## Instalación
 
-To build the project run:
+Desde la carpeta del proyecto Angular, ejecuta:
 
 ```bash
-ng build
+npm install
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Esto descargará todas las dependencias necesarias para correr la aplicación.
 
-## Running unit tests
+## Ejecución en desarrollo
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Para levantar el servidor local de Angular:
 
 ```bash
-ng test
+npm start
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+O bien:
 
 ```bash
-ng e2e
+npx ng serve
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Luego abre tu navegador en:
 
-## Additional Resources
+```text
+http://localhost:4200/
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Estructura principal del proyecto
+
+```text
+src/
+├── app/
+│   ├── pages/
+│   │   ├── landing/
+│   │   ├── login/
+│   │   ├── register/
+│   │   ├── dashboard-admin/
+│   │   ├── dashboard-user/
+│   │   └── ...
+│   ├── app.routes.ts
+│   ├── app.ts
+│   └── app.css
+├── index.html
+├── main.ts
+├── styles.css
+└── ...
+```
+
+## Rutas principales
+
+La app incluye navegación para:
+
+- Inicio
+- Login
+- Registro
+- Recuperación de contraseña
+- Dashboard de administrador
+- Dashboard de usuario
+
+## Tecnologías utilizadas
+
+- Angular
+- TypeScript
+- RxJS
+- Bootstrap
+- Angular Router
+

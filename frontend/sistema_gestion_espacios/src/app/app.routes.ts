@@ -6,6 +6,10 @@ import { Login } from './pages/login/login';
 import { Register } from './pages/register/register';
 import { RecoverPassword } from './pages/recover-password/recover-password';
 import { DashboardAdmin } from './pages/dashboard-admin/dashboard-admin';
+import { Salas } from './pages/dashboard-admin/salas/salas';
+import { Reservas } from './pages/dashboard-admin/reservas/reservas';
+import { Usuarios } from './pages/dashboard-admin/usuarios/usuarios';
+import { Reportes } from './pages/dashboard-admin/reportes/reportes';
 import { DashboardUser } from './pages/dashboard-user/dashboard-user';
 
 import { EspaciosDisponibles } from './pages/dashboard-user/espacios-disponibles/espacios-disponibles';
@@ -45,9 +49,51 @@ export const routes: Routes = [
   },
 
   {
-    path: 'dashboard/admin',
-    component: DashboardAdmin,
-    data: { title: 'Panel de Administrador' },
+  path: 'dashboard/admin',
+  component: DashboardAdmin,
+  data: { title: 'Panel de Administrador' },
+
+  children: [
+
+      {
+        path: '',
+        redirectTo: 'salas',
+        pathMatch: 'full',
+      },
+
+      {
+        path: 'salas',
+        component: Salas,
+        data: {
+          title: 'Administrar Salas'
+        },
+      },
+
+      {
+        path: 'reservas',
+        component: Reservas,
+        data: {
+          title: 'Gestionar Reservas'
+        },
+      },
+
+      {
+        path: 'usuarios',
+        component: Usuarios,
+        data: {
+          title: 'Gestionar Usuarios'
+        },
+      },
+
+      {
+        path: 'reportes',
+        component: Reportes,
+        data: {
+          title: 'Ver Reportes'
+        },
+      },
+
+    ],
   },
 
   {

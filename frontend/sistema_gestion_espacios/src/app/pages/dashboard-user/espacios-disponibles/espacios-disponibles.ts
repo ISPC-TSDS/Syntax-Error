@@ -1,45 +1,34 @@
-import { Component } from '@angular/core';
-
-interface Espacio {
-  id: number;
-  nombre: string;
-  capacidad: number;
-  estado: string;
-}
+import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
+import { LabsService, Lab } from '../../../services/labs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-espacios-disponibles',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './espacios-disponibles.html',
   styleUrl: './espacios-disponibles.css',
 })
-export class EspaciosDisponibles {
+export class EspaciosDisponibles implements OnInit {
+  private labsService = inject(LabsService);
+  private cdr = inject(ChangeDetectorRef);
 
-  espacios: Espacio[] = [
-    {
-      id: 1,
-      nombre: 'The Collaboration Hub',
-      capacidad: 12,
-      estado: 'Disponible'
-    },
-    {
-      id: 2,
-      nombre: 'The Focus Zone',
-      capacidad: 6,
-      estado: 'Disponible'
-    },
-    {
-      id: 3,
-      nombre: 'The Code Corner',
-      capacidad: 8,
-      estado: 'Ocupada'
-    },
-    {
-      id: 4,
-      nombre: 'The Idea Incubator',
-      capacidad: 15,
-      estado: 'Disponible'
-    }
-  ];
+  espacios: Lab[] = [];
+  loading = true;
 
+  ngOnInit(): void {
+    this.labsService.getLabs().subscribe({
+      next: (labs) => {
+        this.espacios = labs;
+        this.loading = false;
+        this.cdr.markForCheck();
+      },
+      error: (err) => {
+        console.error('Error al cargar laboratorios:', err);
+        this.loading = false;
+        this.cdr.markForCheck();
+      }
+    });
+  }
 }
+
