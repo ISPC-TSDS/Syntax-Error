@@ -33,11 +33,10 @@ export class Login {
 
     this.authService.login(username!, password!).subscribe({
       next: (users) => {
-        if (users && users.length > 0) {
-          const user = users[0];
-          this.authService.setCurrentUser(user);
+        if (users) {
+          this.authService.setCurrentUser(users);
           this.errorMessage = '';
-          if (user.rol === 'admin') {
+          if (users.rol === 'admin') {
             this.router.navigate(['/dashboard/admin']);
           } else {
             this.router.navigate(['/dashboard/user']);
@@ -52,4 +51,4 @@ export class Login {
       }
     });
   }
-}
+}

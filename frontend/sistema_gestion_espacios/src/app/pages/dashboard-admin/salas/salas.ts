@@ -60,7 +60,7 @@ export class Salas implements OnInit {
 
   abrirEditar(lab: Lab): void {
     if (!lab.id) return;
-    this.editingLabId = lab.id;
+    this.editingLabId = Number (lab.id);
     this.labForm.patchValue({
       nombre: lab.nombre,
       ciclo: lab.ciclo || '',
